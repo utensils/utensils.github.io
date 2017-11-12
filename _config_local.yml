@@ -1,0 +1,1 @@
+host: 0.0.0.0 # so we can share page on local network (ie: mobile device!)
