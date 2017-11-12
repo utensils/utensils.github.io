@@ -1,0 +1,27 @@
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  {% include _title.html %}
+
+  <link rel="apple-touch-icon" href="{{ site.utensils.logo }}"/>
+  <link rel="shortcut icon" sizes="16x16 24x24 32x32 48x48 64x64" href="{{ site.url }}/favicon.ico" />
+
+  <link rel="stylesheet" href="{{ site.url }}/assets/css/normalize.css">
+  <link rel="stylesheet" href="{{ site.url }}/assets/css/style.css">
+
+  <link rel="canonical" href="{{ site.url }}{{ page.url }}">
+
+  <meta name="contact" data-encoded="{{site.utensils.email-encoded}}" data-key="{{site.utensils.email-key}}">
+  <meta name="author" content="{{ site.utensils.author }}">
+  <meta name="description" content="{{ site.utensils.tagline }}"/>
+
+  <meta property="og:title" content="{{ site.utensils.tagline }}"/>
+  <meta property="og:url" content="{{ site.url }}{{ page.url }}"/>
+  <meta property="og:image" content="{{ site.url }}{{ site.baseurl }}{{ site.utensils.logo }}"/>
+  <meta property="og:description" content="{{ site.utensils.description }}"/>
+  <meta property="og:site_name" content="{{ site.utensils.tagline }}">
+
+  {% if site.utensils.include_analytics %}
+  {% include analytics.html %}
+  {% endif %}
+</head>
