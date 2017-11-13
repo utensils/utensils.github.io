@@ -1,8 +1,10 @@
 # Site settings
+url: https://utensils.io
+
 utensils:
   # an avatar or logo (optional)
-  logo: "/assets/img/utensils-icon.png"
-  title: "utensils.io"
+  logo: /assets/img/utensils-icon.png
+  title: utensils.io
   # Obfuscated email
   # instructions: bundle exec rake email
   email-key: RwUizVYPO9fqXThnr5tNABpSE6KQD3MIymGeCL271dgJ04H8vxckojWsFlabuZ
@@ -13,23 +15,16 @@ utensils:
   # if include_analytics is true, the content of the analytics.html include will
   # be added at the end of the <head> section. You can add your Google Analytics
   # Tracking Code to that file.
-  include_analytics: false
+  include_analytics: true
 
 # Build settings
 markdown: kramdown
 
 plugins:
   - github-pages
-# Exclude from processing.
-# The following items will not be processed, by default. Create a custom list
-# to override the default setting.
+
 exclude:
    - Gemfile
    - Gemfile.lock
    - README.md
    - Rakefile
-#   - node_modules
-#   - vendor/bundle/
-#   - vendor/cache/
-#   - vendor/gems/
-#   - vendor/ruby/
