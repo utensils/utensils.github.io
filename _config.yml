@@ -20,6 +20,19 @@ utensils:
 # Build settings
 markdown: kramdown
 
+sass:
+    style: compressed
+
+compress_html:
+  ignore:
+    envs: ["development"]
+  clippings: []
+  comments: all
+  endings: []
+  startings: []
+  blanklines: false
+  profile: false
+
 plugins:
   - github-pages
 

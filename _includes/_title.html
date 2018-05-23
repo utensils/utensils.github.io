@@ -2,11 +2,6 @@
 {% if page.title %}
   {% assign title_tag = page.title | append:" - " | append: title_tag %}
 {% endif %}
-{% if site.description_short %}
-  {% assign title_tag = title_tag | append:" - " | append: site.description_short %}
-{% elsif site.description %}
-  {% assign title_tag = title_tag | append:" - " | append: site.description |  truncatewords: 5 %}
-{% endif %}
 {% if title_tag %}
   {% assign title_tag = title_tag | smartify | strip_html | normalize_whitespace | escape_once %}
 {% endif %}
