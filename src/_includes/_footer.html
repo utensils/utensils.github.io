@@ -1,0 +1,55 @@
+<footer class="footer">
+  <div class="container">
+    <div class="columns">
+      <div class="column is-6">
+        <div class="content has-text-centered">
+          <div class="box has-text-left is-size-7" style="margin: 0px auto;">
+            <span class="title is-6 has-text-black">u·ten·sil</span> <em class="has-text-danger">noun</em><br>
+            yo͞oˈtensəl/<br>
+            plural noun: utensils<br>
+            <ol>
+              <li>an implement, container, or other article, especially for household use.<br></li>
+              <li>a product or experienced individual that delivers results, especially for engineer and systems work.</li>
+            </ol>
+          </div>
+        </div>
+      </div>
+      <div class="column is-2 is-offset-1 has-text-centered-mobile">
+        <p class="title is-6">With expertise in...</p>
+        <ul>
+          {%- for linkage in site.data.core.navigation.footer.expertise %}
+          <li>{{ linkage.caption }}</li>
+          {%- endfor -%}
+        </ul>
+      </div>
+      <div class="column is-3 has-text-centered-mobile nav-footer">
+        {%- for linkage in site.data.core.navigation.footer.menu %}
+          {%- if linkage.dropdown -%}
+            {% capture active %}{% if page.url == linkage.url %} class="is-active"{% endif %}{% endcapture %}
+            <p class="title is-6"><a href="{{linkage.url}}"{{ active }}>{{linkage.caption}}</a></p>
+            <ul class="is-underlined">
+              {%- if linkage.dropdown == "services" -%}
+                {%- for catalog in site.data.services.catalog -%}
+                <li><a href="{{ catalog.slug | prepend: "/services/" }}">{{ catalog.name }}</a></li>
+                {%- endfor -%}
+              {% endif %}
+              {%- if linkage.dropdown == "categories" -%}
+                {%- for topic in site.categories -%}
+                  {%- include functions/getCategory name=topic.first -%}
+                  {%- capture active -%}
+                    {%- if page.title == category.name -%} is-active{%- endif -%}
+                    {%- if page.categories.first == category.name -%} is-active{%- endif -%}
+                  {%- endcapture -%}
+                  <li><a{% if active %} class="{{ active }}"{% endif %} href="{{ site.jekyll-archives.permalinks.category | replace: ":name", category.name }}">{{ category.caption }}</a></li>
+                {%- endfor -%}
+              {%- endif -%}
+            </ul>
+          {%- else -%}
+          {% capture active %}{% if page.url == linkage.url %} class="is-active"{% endif %}{% endcapture %}
+          <p class="title is-6"><a href="{{linkage.url}}"{{ active }}>{{linkage.caption}}</a></p>
+          {%- endif -%}
+        {%- endfor -%}
+      </div>
+    </div>
+  </div>
+</footer>

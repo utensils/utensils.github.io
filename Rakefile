@@ -8,21 +8,18 @@ class String
   end
 end
 
-msg = "jekyll-namesake"
-
 task :default do
-  msg = "#{msg}\nFeel free to run a task for more instructions."
-  system "echo #{msg}"
+  system "echo Rake tasks"
   system "rake --tasks"
 end
 
-desc 'Generate an encoded email address to stop spammers'
+desc 'Generate an obfuscated email address to stop spammers'
 task :email do
   puts 'Please type in an email address then press ENTER/RETURN'
   address = STDIN.gets.chomp.downcase
   key = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789'
   key.shuffle!
-  puts "\nInstallation:\nUpdate `_config.yml` with freshly generated email-key, and email-encoded.\n\nemail-key: #{key}"
+  puts "\nInstallation:\nUpdate src/_config.yml with the following pairs.\n\nemail-key: #{key}"
 
   scrambled = ''
   shift = address.length

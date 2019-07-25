@@ -1,0 +1,36 @@
+navigation:
+  top:
+    - caption: Blog
+      dropdown: categories
+      url: "/blog/"
+    - caption: Services
+      url: "/services/"
+    - caption: Work
+      url: "/blog/work/" # note: redundant.. link found in blog dropdown also
+    - caption: Team
+      url: "/team/"
+  footer:
+    expertise: # todo: make this like services.yml
+      - caption: Docker
+      - caption: Elixir / Phoenix
+      - caption: Ruby
+      - caption: ReactJS 
+    menu:
+      - caption: Services
+        dropdown: services
+        url: "/services/"
+      - caption: Blog
+        dropdown: categories
+        url: "/blog/"
+categories: # blog categories
+  - name: work
+    caption: Case Studies
+    description: Donec urna ex, lacinia in purus ac, pretium pulvinar mauris. Curabitur sapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit.
+  - name: tutorials
+    caption: Tutorials
+    description: Pellentesque venenatis dolor imperdiet dolor mattis sagittis.
+tags:
+  - name: elixir
+    description: Donec urna ex, lacinia in purus ac, pretium pulvinar mauris.
+  - name: docker
+    description: Pellentesque leo mauris, consectetur id ipsum sit amet, fergiat.

@@ -1,0 +1,19 @@
+---
+layout: default
+---
+<section class="section">
+  <div class="container">
+    <h1 class="title is-3 bree">{{ page.offer.name }}</h1>
+    {{ page.offer.description | markdownify }}
+    <hr>
+    import: {{ page.import }}
+    <hr>
+    {% if page.import %}
+      {% include {{ page.import }} %}
+    {% endif %}
+    <hr>
+    {% for service in page.offer.services %}
+      -{{ service.name}}<br>
+    {% endfor %}
+  </div>
+</section>

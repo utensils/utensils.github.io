@@ -1,0 +1,13 @@
+---
+layout: compress
+nav_style: hero
+---
+<!DOCTYPE html>
+<html>
+  {% include _head.html %}
+  <body>
+    {{ content }}
+    {% asset main.js %}
+    {%- include _footer.html -%}
+  </body>
+</html>

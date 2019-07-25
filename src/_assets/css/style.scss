@@ -1,0 +1,304 @@
+@import url('https://fonts.googleapis.com/css?family=Bree+Serif|IBM+Plex+Sans:300,400,700');
+
+// Teal     Indigo    Purple    Brown     Red       Orange
+// #071E32  #0D0B36   #1C0834   #4D1C05   #8C0007   #922D00
+// #284660  #323067   #452B64   #945437   #E5141D   #EB4900
+// #617A90  #6E6D9B   #7C6697   #DFA890   #FB6F76   #FF854E
+
+$red: #E5141D;
+$orange: #EB4900;
+$teal: #284660; 
+$indigo: #323067;
+$royal: #452B64;
+$burnt: #945437;
+
+$danger: #7C6697;
+$warning: #617A90;
+$success: #042B2F;
+
+$link: #EB4900; 
+$link-hover: $red;
+
+$family-sans-serif: 'IBM Plex Sans', sans-serif;
+$footer-background-color: #0D0B36;
+$body-size: 18px;
+$title-weight: 400;
+
+$navbar-dropdown-arrow: $burnt;
+@import 'bulma/bulma';
+@import 'libs/mixins';
+
+html {
+  body {
+    @include font-smoothing(on);
+    
+    .button {
+      // font-family: "Quicksilver", sans-serif;
+      font-weight: 700;
+      &.cta {
+        padding: 24px 32px;
+      }
+    }
+    
+    
+    .hero-home {
+      .content {
+        font-size: 1.2em;
+      }      
+    }
+    
+    .section-services {
+      background-color: $white-ter;
+      .title {
+        &.is-3 {
+          margin: 0px 0px 3rem 0px;
+        }
+        &.is-5 {
+          margin: 1rem 0px;
+        }
+      }
+      .box {
+        min-height: 300px;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        
+        p {
+          min-height: 65px;
+        }
+      }
+      &.home {
+        .title {
+          &.is-5 {
+            margin: 0px;
+          }
+        }
+        .box {
+          min-height: 60px !important;  
+        }
+      }
+    }
+    
+    #navbar {
+
+      &.navbar-hero {
+        .navbar-item, .navbar-link{
+          color: $text;
+          @include from($desktop){
+            color: $white-ter;
+          }
+        }
+        .is-boxed > .navbar-item {
+          color: #000;
+        }
+        .contact {
+          color: $white-ter;
+          background: none;
+          border: 2px solid $teal;
+
+          &:hover {
+            border: 2px solid $burnt;
+          }
+        }
+      }
+      &.navbar-plain {
+        .contact {
+            background-color: $teal;
+            border: 0;
+            color: #fff;
+            &:hover {
+              color: #fff;
+              background-color: $indigo;
+              border: 0;
+            }
+          }
+        
+      }
+      .navbar-brand {
+        .title {
+          display: flex;
+          flex-direction: row;
+          justify-content: flex-end;
+          align-items: center;
+          img {
+            width: 36px !important;
+            max-height: 36px !important;
+          }
+          span { 
+            letter-spacing: -1px;
+            margin-left: 0.5rem;
+            font-size: 1.5rem;
+          }
+        }        
+        .contact { // note: touch only
+          margin: auto 10px auto auto;
+          font-size: 0.75em !important; 
+        } 
+        .navbar-burger {
+          margin-left: 0;
+          color: $teal;
+          &.is-active {
+            span {
+              height: 3px;
+            }
+          }
+          span {
+            height: 2px;
+          }          
+
+        }
+      }
+      .navbar-menu {
+        .navbar-dropdown {
+          top: calc(100% + (-26px));
+        }
+        .navbar-end {
+          .contact { // note: desktop only
+            font-weight: 700 !important;
+            margin: auto 0px auto 1rem;
+            font-size: 0.9em !important;
+          }
+        }
+        .navbar-link:not(.is-arrowless)::after {
+          right: 0.5em;
+        }
+        .navbar-end > .has-dropdown > .navbar-link {
+          opacity: 1; // issue: on dark bg, this end up 0.7 opacity
+          @include from($desktop) {
+            padding-left: 0px;
+            padding-right: 2em;
+            &.is-active { 
+              color: $burnt;
+            }        
+          }
+        }
+        .navbar-end > .navbar-item {
+          @include from($desktop) {
+            padding: 1.5rem 1rem;
+            
+            &.is-active {
+              padding: 2px 0px 5px 0px;
+              margin: 0px 1rem; 
+              border-top: 3px solid $link;
+              color: $link; 
+            }        
+          }
+        }        
+      }
+    }
+
+    .bree {
+      font-family: 'Bree Serif', serif;
+      font-weight: 400 !important; 
+      letter-spacing: 2px;
+    }
+    .ibm {
+      font-family: $family-sans-serif;
+    }
+    .header {
+      margin-bottom: 3rem;
+    }
+    .hero {
+      &.hero-home {
+        $gradient-top-left: darken(saturate(adjust-hue($success, -10deg), 10%), 10%);
+        $gradient-bottom-right: lighten(saturate(adjust-hue($success, 10deg), 5%), 5%);
+        background-image: linear-gradient(141deg, $gradient-top-left 0%, $success 71%, $gradient-bottom-right 100%);
+
+        .title, .content{
+          color: #fff;
+        }
+        .title {
+          font-family: "Bree Serif";
+          letter-spacing: 2px;
+        }
+        .content {
+          font-size: 1.2em;
+        }
+      }
+
+      
+      .spiro {
+        @include from($desktop){
+          background-image: asset_url("spiro02.png");
+          background-repeat: no-repeat;
+          background-position: right center;
+
+          background-size: 60% 100%;
+        }
+      }
+    }
+    
+    article {
+      &.preview {   
+        .header {
+          margin-bottom: 1rem;
+        }  
+        .content {
+          padding-top: 1rem;
+        }
+      }
+    }
+    
+    .posts {
+      .post-link {
+        .post-date {
+          font-size: 0.8em;
+          color: $grey-lighter;
+        }        
+      }
+    }
+    
+    footer {
+      color: #fff;
+      a {
+        color: #fff;
+        padding-bottom: 0.125rem;
+        &:hover {
+          color: #fff;
+          border-bottom: 1px dotted $orange;
+        }
+      }
+      .title { 
+        color: $orange;
+        font-weight: 700;
+        &:not(:last-child) {
+          padding-bottom: 0.45rem;
+          margin-bottom: 0.45rem;
+        }
+        .is-active {
+          &:after {
+            font-weight: 700;
+            content: " ← ";
+            color: $orange;
+            font-size: 0.8em;
+          }
+        }
+      }
+      
+      ul{
+        margin-bottom: 0.9rem;
+        
+        &.is-underlined {
+          li {
+            padding-left: 8px;
+            
+            &:not(:last-child) {
+              margin-bottom: 0.25rem;
+              padding-bottom: 0.25rem;
+            }
+            
+            a {
+              &.is-active {
+                margin-left: -8px;
+                padding-left: 5px;
+                border-left: 3px solid $orange;
+              }   
+            }
+          }
+        }
+      }
+    }
+  }
+}

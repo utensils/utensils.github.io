@@ -1,0 +1,11 @@
+{
+  "name": "Utensils",
+  "version": "1.0.0",
+  "main": "",
+  "repository": "https://github.com/utensils/utensils.github.io",
+  "author": "burden <burden@burden.cc>",
+  "license": "MIT",
+  "dependencies": {
+    "bulma": "^0.7.5"
+  }
+}

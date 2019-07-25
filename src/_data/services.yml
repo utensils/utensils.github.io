@@ -1,0 +1,51 @@
+industry: Solutions Boutique
+intro: |
+  We’ve been around the block before and we’ve sat on the other side of the table.  We won’t waste your time or money with countless meetings and processes.  In fact, if it’s not work on a deliverable we *don’t charge*.   That means all of our work is peer reviewed by another team member *at no charge to our clients*.  Why?  Because we believe in delivering the right solution, the first time
+
+area-served:
+  type: Text # valid: Text, or Place (e.g. State, or City)
+  caption: Worldwide
+catalog:
+  - name: Product Design # link caption
+    slug: digital-product-design # link url
+    title: Digital Product Design # page title
+    description: Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+    offers:
+      - name: Strategy & Planning # link caption and page title
+        slug: strategy-and-planning
+        description: Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+      - name: Product Development
+        slug: product-development
+        description: Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+      - name: User Experience
+        title: User Experience (UX) Design
+        slug: ux-design
+        description: Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+  - name: Software Engineering
+    title: Software Engineering
+    slug: software-engineering
+    description: Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+    offers:
+      - name: Back-end development
+        slug: back-end-development
+        description: Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+      - name: User-focused development
+        slug: user-focused-development
+        description: Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+      - name: Testing and QA
+        slug: testing-and-qa
+        description: Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+  - name: Operations
+    title: Operations
+    slug: operations
+    description: Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+    offers:
+      - name: Docker
+        slug: docker
+        description: Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+      - name: Kubernetes
+        slug: ubernetes
+        description: Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+      - name: Hosting
+        slug: hosting
+        description: Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum

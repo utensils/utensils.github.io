@@ -1,28 +1,30 @@
-# Site settings
-url: https://utensils.io
+title: utensils.io
+description: 
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "" # the base hostname & protocol for your site, e.g. http://example.com
 
-utensils:
-  # an avatar or logo (optional)
-  logo: /assets/img/utensils-icon.png
-  title: utensils.io
-  # Obfuscated email
-  # instructions: bundle exec rake email
-  email-key: RwUizVYPO9fqXThnr5tNABpSE6KQD3MIymGeCL271dgJ04H8vxckojWsFlabuZ
-  email-encoded: P9GLnPL@5LWGXphX.p9
-  # if include_content is true, the contents of the content.html include will be
-  # added right above the generated item list, if present
-  include_content: true
-  # if include_analytics is true, the content of the analytics.html include will
-  # be added at the end of the <head> section. You can add your Google Analytics
-  # Tracking Code to that file.
-  include_analytics: true
+thanks: "/thanks/" # after form submitted, send visitor here
+email-key: NKkExcBXbwYMgnjeV5AHtZhilCDW8RySzG0dJIULvsqf27puQrm41oTaFP9O63
+email-encoded: lYzLglL@xL0z6qf6.qY
+logo: utensils-plain.png # used in schema.org
 
 # Build settings
+plugins:
+  - kramdown
+  - uglifier
+  - jekyll-assets
+  - jekyll-archives
+  - jekyll-compose
+  - jekyll-feed
+  - jekyll-paginate
+  - jekyll-redirect-from
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+source: src
+destination: www
 markdown: kramdown
-
-sass:
-    style: compressed
-
+    
 compress_html:
   ignore:
     envs: ["development"]
@@ -33,11 +35,46 @@ compress_html:
   blanklines: false
   profile: false
 
-plugins:
-  - github-pages
+assets:
+  sources:
+  - _assets/vendor
+  digest: true
+  compression: true
+  gzip: false
+  defaults:
+    js: { integrity: false } # true on JEKYLL_ENV=production
+    css: { integrity: false } # true on JEKYLL_ENV=production
+    img: { integrity: false } # true on JEKYLL_ENV=production
+  compress:
+    css: false
+    js: uglifier
 
-exclude:
-   - Gemfile
-   - Gemfile.lock
-   - README.md
-   - Rakefile
+paginate: 4
+paginate_path: /blog/:num/
+permalink: /blog/:categories/:title/
+
+jekyll-archives:
+  enabled: ['categories', 'tags', 'year']
+  layout: default
+  layouts:
+    year: archive-date
+    category: archive-catalog
+    tag: archive-catalog
+  permalinks:
+    year: '/blog/:year/'
+    tag: '/blog/tag/:name/'
+    category: '/blog/:name/'
+    
+include:
+  - CNAME
+# Exclude from processing.
+# The following items will not be processed, by default. Create a custom list
+# to override the default setting.
+# exclude:
+#   - Gemfile
+#   - Gemfile.lock
+#   - node_modules
+#   - vendor/bundle/
+#   - vendor/cache/
+#   - vendor/gems/
+#   - vendor/ruby/

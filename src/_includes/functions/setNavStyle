@@ -1,0 +1,8 @@
+{%- capture nav_style -%}
+  {%- if page.nav_style -%}
+    {{ page.nav_style }}
+  {%- else -%}
+    {{ layout.nav_style }}
+  {%- endif -%}
+{%- endcapture -%}
+<!-- nav_style: "{{nav_style}}" -->

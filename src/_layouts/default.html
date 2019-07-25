@@ -1,0 +1,14 @@
+---
+layout: compress
+nav_style: plain
+---
+<!DOCTYPE html>
+<html>
+  {% include _head.html %}
+  <body>
+    {%- include _nav.html -%}
+    {{ content }}
+    {% asset main.js %}
+    {%- include _footer.html -%}
+  </body>
+</html>

@@ -1,0 +1,45 @@
+{% include functions/setNavStyle %}
+
+<nav id="navbar" role="navigation" class="navbar navbar-{{nav_style}} is-transparent">
+  <div class="container">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="/">
+        {% asset utensils-'{{ nav_style }}' alt="Utensils logo" %}
+      </a>
+      
+      <a class="contact is-hidden-desktop button is-uppercase is-rounded" href="/contact/">Hire Us</a>
+      
+      <div id="navbarBurger" class="navbar-burger burger" data-target="navMain">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div> <!-- /navbar-brand -->
+    <div class="navbar-menu" id="navMain">
+      <div class="navbar-end">
+        {%- for linkage in site.data.core.navigation.top %}
+          {%- if linkage.dropdown -%}
+          <div class="navbar-item has-dropdown is-arrowless is-hoverable">
+            {% capture active %}{% if page.url == linkage.url %} is-active{% endif %}{% endcapture %}
+            <a class="navbar-link{{active}}" href="{{ linkage.url }}">{{ linkage.caption }}</a>
+            <div id="moreDropdown" class="navbar-dropdown is-boxed">
+              {%- if linkage.dropdown == "categories" -%}
+                {%- for topic in site.categories -%}
+                  {%- include functions/getCategory name=topic.first -%}
+                  {% capture active %}{% if page.title == category.name %} is-active{% endif %}{% if page.categories.first == category.name %} is-active{% endif %}{% endcapture %}
+                  <a class="navbar-item{{ active }}" href="{{ site.jekyll-archives.permalinks.category | replace: ":name", category.name }}">{{ category.caption }}</a>
+                {%- endfor -%}
+              {%- endif -%}
+            </div>
+          </div>
+          {%- else -%}
+          {% capture active %}{% if page.url == linkage.url %} is-active{% endif %}{% endcapture %}
+          <a class="navbar-item{{ active }}" href="{{linkage.url}}">{{linkage.caption}}</a>
+          {%- endif -%}
+        {%- endfor -%}
+        
+        <a class="button is-uppercase is-rounded contact is-hidden-touch" href="/contact/">Hire Us</a>        
+      </div>
+    </div>
+  </div>
+</nav>

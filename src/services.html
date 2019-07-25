@@ -1,0 +1,12 @@
+---
+layout: default
+---
+<section class="section has-text-centered">
+  <div class="container ">
+    <div class="content">{{ site.data.services.intro | markdownify }}</div>
+    {% for catalog in site.data.services.catalog %}
+    <h2 class="title is-3 is-capitalized bree"><a href="{{ catalog.slug }}">{{ catalog.name }}</a></h2>
+    {{ catalog.description | markdownify }}
+    {% endfor %}
+  </div>
+</section>
