@@ -1,4 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Bree+Serif|IBM+Plex+Sans:300,400,700');
+$family-sans-serif: 'IBM Plex Sans', sans-serif;
+$body-size: 16px;
+$title-weight: 400;
 
 // Teal     Indigo    Purple    Brown     Red       Orange
 // #071E32  #0D0B36   #1C0834   #4D1C05   #8C0007   #922D00
@@ -7,24 +10,22 @@
 
 $red: #E5141D;
 $orange: #EB4900;
-$teal: #284660; 
+$teal: #617A90; 
 $indigo: #323067;
 $royal: #452B64;
 $burnt: #945437;
 
-$danger: #7C6697;
-$warning: #617A90;
-$success: #042B2F;
-
-$link: #EB4900; 
+$primary: #7C6697;
+$link: $orange; 
 $link-hover: $red;
 
-$family-sans-serif: 'IBM Plex Sans', sans-serif;
-$footer-background-color: #0D0B36;
-$body-size: 18px;
-$title-weight: 400;
+$success: #7C6697;
 
-$navbar-dropdown-arrow: $burnt;
+$hero-bg: #042B2F;
+$footer-background-color: #0D0B36;
+$navbar-dropdown-arrow: $teal;
+
+
 @import 'bulma/bulma';
 @import 'libs/mixins';
 
@@ -33,13 +34,55 @@ html {
     @include font-smoothing(on);
     
     .button {
-      // font-family: "Quicksilver", sans-serif;
       font-weight: 700;
       &.cta {
         padding: 24px 32px;
       }
+      &.contact {
+        background-color: $teal;
+        color: $white-ter;
+        margin: auto 10px auto auto;
+        font-size: 0.75em !important;
+        border: 0;
+
+        @include from($desktop){
+          font-weight: 700 !important;
+          margin: auto 0px auto 1rem;
+          font-size: 0.9em !important;
+        }
+        
+        &:hover {
+          color: #fff;
+          background-color: darken($teal, 10%);
+          border: 0;
+        }
+      }
     }
     
+    .featured-box {
+      background-color: #fff;
+      border-radius: $radius-large;
+      margin: 0 auto;
+      transition: box-shadow 0.6s;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      align-content: center;
+      border: 1px solid rgba(10,10,10,.1) !important; 
+      padding: 24px;
+      
+      &.is-medium {
+        height: 320px;
+      }
+      &.hover-inset:hover {
+        transition: box-shadow 0.6s;
+        box-shadow: inset rgba($text,.15) 0 0 0 1px, rgba($text,.15) 0 8px 24px;
+      }
+      .content {
+        text-align: center;
+      }
+    }
     
     .hero-home {
       .content {
@@ -49,72 +92,26 @@ html {
     
     .section-services {
       background-color: $white-ter;
-      .title {
-        &.is-3 {
-          margin: 0px 0px 3rem 0px;
-        }
-        &.is-5 {
-          margin: 1rem 0px;
-        }
-      }
-      .box {
-        min-height: 300px;
-        display: flex;
-        flex-direction: column;
-        flex-wrap: wrap;
-        justify-content: center;
-        align-items: center;
-        
-        p {
-          min-height: 65px;
-        }
-      }
-      &.home {
-        .title {
-          &.is-5 {
-            margin: 0px;
-          }
-        }
-        .box {
-          min-height: 60px !important;  
-        }
-      }
     }
     
     #navbar {
-
-      &.navbar-hero {
-        .navbar-item, .navbar-link{
-          color: $text;
-          @include from($desktop){
-            color: $white-ter;
-          }
-        }
-        .is-boxed > .navbar-item {
-          color: #000;
-        }
-        .contact {
-          color: $white-ter;
-          background: none;
-          border: 2px solid $teal;
-
-          &:hover {
-            border: 2px solid $burnt;
-          }
-        }
-      }
+      // customizations
       &.navbar-plain {
-        .contact {
-            background-color: $teal;
-            border: 0;
-            color: #fff;
-            &:hover {
-              color: #fff;
-              background-color: $indigo;
-              border: 0;
+        
+      }
+      &.navbar-hero {
+        .navbar-menu .navbar-end {
+          > .navbar-item, {
+            @include from($desktop){
+              color: $white-ter;
+            }
+            .navbar-link {
+              @include from($desktop){
+                color: $white-ter;
+              }
             }
           }
-        
+        } 
       }
       .navbar-brand {
         .title {
@@ -132,10 +129,7 @@ html {
             font-size: 1.5rem;
           }
         }        
-        .contact { // note: touch only
-          margin: auto 10px auto auto;
-          font-size: 0.75em !important; 
-        } 
+
         .navbar-burger {
           margin-left: 0;
           color: $teal;
@@ -152,17 +146,116 @@ html {
       }
       .navbar-menu {
         .navbar-dropdown {
-          top: calc(100% + (-26px));
-        }
-        .navbar-end {
-          .contact { // note: desktop only
-            font-weight: 700 !important;
-            margin: auto 0px auto 1rem;
-            font-size: 0.9em !important;
-          }
+          top: calc(100% + (-24px));
         }
         .navbar-link:not(.is-arrowless)::after {
-          right: 0.5em;
+          right: .5em; // move the arrow
+        }
+        .navbar-end > .has-dropdown > .navbar-link {
+          opacity: 1; // issue: on dark bg, this end up 0.7 opacity
+          @include from($desktop) {
+            padding-left: 0px;
+            padding-right: 2em;
+            &.is-active { 
+              color: $link;
+            }        
+          }
+        }
+        .navbar-end {
+          > .navbar-item { // nav item only
+            @include from($desktop) {
+              padding: 1.5rem 1rem;
+              &.is-active {
+                padding: 2px 0px 5px 0px;
+                margin: 0px 1rem; 
+                border-top: 3px solid $link;
+                color: $link;
+              }
+            }
+          }
+          .navbar-item { // all the items
+            @include from($desktop){
+              letter-spacing: 2px;  
+            }          
+            font-weight: 700;
+          }
+        }
+      }
+    }
+    
+    #broken_navbar {
+      &.navbar-plain {
+        .navbar-item, .navbar-link{
+          color: $indigo;
+          &.is-active {
+            color: $burnt;
+          }
+        }
+        .navbar-menu {
+          .navbar-end > .has-dropdown > .navbar-link {
+            &.is-active {
+              color: $burnt !important;
+            }
+          }
+      }
+      &.navbar-hero {
+        .navbar-item, .navbar-link{
+          color: $text;
+          @include from($desktop){
+            color: $white-ter;
+          }
+        }
+        }
+        .contact {
+          background: none;
+          border: 2px solid $burnt;
+          transition: all .4s;
+          &:hover {
+            transition: all .4s;
+            background-color: $burnt;
+            border: 2px solid $burnt;
+          }
+        }
+      }
+      
+      .navbar-brand {
+        .title {
+          display: flex;
+          flex-direction: row;
+          justify-content: flex-end;
+          align-items: center;
+          img {
+            width: 36px !important;
+            max-height: 36px !important;
+          }
+          span { 
+            letter-spacing: -1px;
+            margin-left: 0.5rem;
+            font-size: 1.5rem;
+          }
+        }        
+
+        .navbar-burger {
+          margin-left: 0;
+          color: $teal;
+          &.is-active {
+            span {
+              height: 3px;
+            }
+          }
+          span {
+            height: 2px;
+          }          
+
+        }
+      }
+      .navbar-menu {
+        // reposition dropdown to align text with nav
+        .navbar-dropdown {
+          top: calc(100% + (-28px));
+        }
+        .navbar-link:not(.is-arrowless)::after {
+          right: .5em; // move the arrow
         }
         .navbar-end > .has-dropdown > .navbar-link {
           opacity: 1; // issue: on dark bg, this end up 0.7 opacity
@@ -175,9 +268,10 @@ html {
           }
         }
         .navbar-end > .navbar-item {
+          letter-spacing: 1px;
           @include from($desktop) {
             padding: 1.5rem 1rem;
-            
+
             &.is-active {
               padding: 2px 0px 5px 0px;
               margin: 0px 1rem; 
@@ -202,9 +296,9 @@ html {
     }
     .hero {
       &.hero-home {
-        $gradient-top-left: darken(saturate(adjust-hue($success, -10deg), 10%), 10%);
-        $gradient-bottom-right: lighten(saturate(adjust-hue($success, 10deg), 5%), 5%);
-        background-image: linear-gradient(141deg, $gradient-top-left 0%, $success 71%, $gradient-bottom-right 100%);
+        $gradient-top-left: darken(saturate(adjust-hue($hero-bg, -10deg), 10%), 10%);
+        $gradient-bottom-right: lighten(saturate(adjust-hue($hero-bg, 10deg), 5%), 5%);
+        background-image: linear-gradient(141deg, $gradient-top-left 0%, $hero-bg 71%, $gradient-bottom-right 100%);
 
         .title, .content{
           color: #fff;

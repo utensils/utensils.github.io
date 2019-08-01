@@ -3,14 +3,14 @@ layout: default
 ---
 <section class="section section-services">
   <div class="container">
-    <h1 class="title is-3 bree">{{ page.service.title }}</h1>
+    <h1 class="title is-2 bree">{{ page.service.title }}</h1>
 
     <div class="columns is-multiline">
       {% for offer in page.service.offers %}
       <div class="column is-4">
-        <div class="box">
-          <h3 class="has-text-centered title is-5 bree"><a href="{{ offer.slug }}">{{ offer.name }}</a></h3>
-          <p>{{ offer.description }}</p>
+        <div class="featured-box is-medium hover-inset">
+          <h3 class="title is-4 bree"><a href="{{ offer.slug }}">{{ offer.name }}</a></h3>
+          <p class="content">{{ offer.description }}</p>
         </div>
       </div>
       {% endfor %}

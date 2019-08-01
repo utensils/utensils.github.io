@@ -6,7 +6,7 @@ navigation:
     - caption: Services
       url: "/services/"
     - caption: Work
-      url: "/blog/work/" # note: redundant.. link found in blog dropdown also
+      url: "/work/" # note: redundant.. link found in blog dropdown also
     - caption: Team
       url: "/team/"
   footer:
@@ -16,6 +16,8 @@ navigation:
       - caption: Ruby
       - caption: ReactJS 
     menu:
+      - caption: Work
+        url: "/work/"
       - caption: Services
         dropdown: services
         url: "/services/"
@@ -34,3 +36,19 @@ tags:
     description: Donec urna ex, lacinia in purus ac, pretium pulvinar mauris.
   - name: docker
     description: Pellentesque leo mauris, consectetur id ipsum sit amet, fergiat.
+projects:
+  - name: Culpa qui
+    repo: culpa_qui
+    intro: Donec urna ex, lacinia in purus ac, pretium pulvinar mauris.
+  - name: Culpa qui
+    repo: culpa_qui
+    intro: Donec urna ex, lacinia in purus ac, pretium pulvinar mauris.
+  - name: Culpa qui
+    repo: culpa_qui
+    intro: Donec urna ex, lacinia in purus ac, pretium pulvinar mauris.
+  - name: Culpa qui
+    repo: culpa_qui
+    intro: Donec urna ex, lacinia in purus ac, pretium pulvinar mauris.
+  - name: Culpa qui
+    repo: culpa_qui
+    intro: Donec urna ex, lacinia in purus ac, pretium pulvinar mauris.

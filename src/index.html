@@ -42,8 +42,10 @@ nav_style: hero
         <div class="column is-8">
           <div class="columns is-multiline">
             {% for catalog in site.data.services.catalog %}
-            <div class="column is-6 is-offset-3 box">
-              <h2 class="title is-5 is-capitalized bree"><a href="{{ catalog.slug | prepend: "/services/" }}">{{ catalog.name }}</a></h2>
+            <div class="column is-6 is-offset-3">
+              <div class="featured-box">
+                <h2 class="title is-5 is-capitalized bree"><a href="{{ catalog.slug | prepend: "/services/" }}">{{ catalog.name }}</a></h2>
+              </div>
             </div>
             {% endfor %}
           </div>
