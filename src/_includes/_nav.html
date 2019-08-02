@@ -26,14 +26,20 @@
               {%- if linkage.dropdown == "categories" -%}
                 {%- for topic in site.categories -%}
                   {%- include functions/getCategory name=topic.first -%}
-                  {% capture active %}{% if page.title == category.name %} is-active{% endif %}{% if page.categories.first == category.name %} is-active{% endif %}{% endcapture %}
+                  {%- capture active -%}
+                    {% if page.title == category.name %} is-active{% endif %}
+                    {% if page.categories.first == category.name %} is-active{% endif %}
+                  {%- endcapture -%}
                   <a class="navbar-item{{ active }}" href="{{ site.jekyll-archives.permalinks.category | replace: ":name", category.name }}">{{ category.caption }}</a>
                 {%- endfor -%}
               {%- endif -%}
             </div>
           </div>
           {%- else -%}
-          {% capture active %}{% if page.url == linkage.url %} is-active{% endif %}{% endcapture %}
+          {%- capture active -%}
+            {% if page.url == linkage.url %} is-active{% endif %}
+            {% if page.service %}{% if linkage.url == "/services/" %} is-active{% endif %}{% endif %}
+          {%- endcapture -%}
           <a class="navbar-item{{ active }}" href="{{linkage.url}}">{{linkage.caption}}</a>
           {%- endif -%}
         {%- endfor -%}

@@ -30,7 +30,10 @@
             <ul class="is-underlined">
               {%- if linkage.dropdown == "services" -%}
                 {%- for catalog in site.data.services.catalog -%}
-                <li><a href="{{ catalog.slug | prepend: "/services/" }}">{{ catalog.name }}</a></li>
+                {%- capture active -%}
+                  {%- if page.service.name == catalog.name -%} is-active{%- endif -%}
+                {%- endcapture -%}
+                <li><a{% if active %} class="{{ active }}"{% endif %} href="{{ catalog.slug | prepend: "/services/" }}">{{ catalog.name }}</a></li>
                 {%- endfor -%}
               {% endif %}
               {%- if linkage.dropdown == "categories" -%}
