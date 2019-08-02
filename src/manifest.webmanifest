@@ -1,0 +1,21 @@
+---
+---
+{
+  "icons": [
+    {
+      "src": "{% asset favicon-192x192.png @path %}",
+      "type": "png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "{% asset favicon-96x96.png @path %}",
+      "type": "png",
+      "sizes": "96x96"
+    },
+    {
+      "src": "{% asset favicon-48x48.png @path %}",
+      "type": "png",
+      "sizes": "48x48"
+    }
+  ]
+}

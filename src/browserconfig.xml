@@ -1,0 +1,13 @@
+---
+---
+<browserconfig>
+  <msapplication>
+    <tile>
+      <square70x70logo src='{% asset favicon-128x128.png @path %}'/>
+      <square150x150logo src='{% asset favicon-270x270.png @path %}'/>
+      <wide310x150logo src='{% asset favicon-558x270.png @path %}'/>
+      <square310x310logo src='{% asset favicon-558x558.png @path %}'/>
+      <TileColor/>
+    </tile>
+  </msapplication>
+</browserconfig>

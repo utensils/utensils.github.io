@@ -15,8 +15,31 @@
   {% seo %}
   {% asset style.css %}
   <script defer src="https://use.fontawesome.com/releases/v5.7.1/js/all.js"></script>
-  
   <script type="application/ld+json">
   {% include _meta-ld-Service.html %}
   </script>
+  <!-- Legacy -->
+  <link rel="shortcut icon" href="{% asset favicon.ico @path %}">
+  <link rel="icon" sizes="48x48 32x32 16x16" href="{% asset favicon.ico @path %}">
+  <link rel="icon" sizes="16x16" type="image/png" href="{% asset favicon-16x16.png @path %}">
+  <link rel="icon" sizes="32x32" type="image/png" href="{% asset favicon-32x32.png @path %}">
+  <link rel="icon" sizes="64x64" type="image/png" href="{% asset favicon-64x64.png @path %}">
+  <link rel="icon" sizes="144x144" type="image/png" href="{% asset favicon-144x144.png @path %}">
+  <!-- Safari -->
+  <link rel="apple-touch-icon" sizes="57x57" href="{% asset favicon-57x57.png @path %}">
+  <link rel="apple-touch-icon" sizes="76x76" href="{% asset favicon-76x76.png @path %}">
+  <link rel="apple-touch-icon" sizes="120x120" href="{% asset favicon-120x120.png @path %}">
+  <link rel="apple-touch-icon" sizes="152x152" href="{% asset favicon-152x152.png @path %}">
+  <link rel="apple-touch-icon" sizes="167x167" href="{% asset favicon-167x167.png @path %}">
+  <link rel="apple-touch-icon" sizes="180x180" href="{% asset favicon-180x180.png @path %}">
+  <!-- Chrome -->
+  <link rel="icon" sizes="192x192" href="{% asset favicon-192x192.png @path %}">
+  <link rel="icon" sizes="96x96" href="{% asset favicon-96x96.png @path %}">
+  <link rel="icon" sizes="48x48" href="{% asset favicon-48x48.png @path %}">
+  <link rel="manifest" href="/manifest.webmanifest">
+  <!-- IE -->
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="{% asset favicon-144x144.png @path %}">
+  <meta name='msapplication-config' content="/browserconfig.xml">
+
 </head>

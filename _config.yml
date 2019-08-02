@@ -38,6 +38,7 @@ compress_html:
 assets:
   sources:
   - _assets/vendor
+  - _assets/favicon
   digest: true
   compression: true
   gzip: false
