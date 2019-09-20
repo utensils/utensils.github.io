@@ -65,7 +65,13 @@ jekyll-archives:
     year: '/blog/:year/'
     tag: '/blog/tag/:name/'
     category: '/blog/:name/'
-    
+
+defaults: # hide blog pages from sitemap until complete
+  -
+    scope:
+      path: "blog" 
+    values:
+      sitemap: false
 include:
   - CNAME
 # Exclude from processing.
