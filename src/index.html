@@ -44,7 +44,7 @@ nav_style: hero
             {% for catalog in site.data.services.catalog %}
             <div class="column is-6 is-offset-3">
               <div class="featured-box">
-                <h2 class="title is-5 is-capitalized bree"><a href="{{ catalog.slug | prepend: "/services/" }}">{{ catalog.name }}</a></h2>
+                <h2 class="title is-5 is-capitalized bree"><a href="{{ catalog.slug | prepend: "/services/" }}">{{ catalog.caption }}</a></h2>
               </div>
             </div>
             {% endfor %}

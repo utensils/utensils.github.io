@@ -1,29 +1,31 @@
 navigation:
   top:
-    - caption: Blog
-      dropdown: categories
-      url: "/blog/"
+    # - caption: Blog
+    #   dropdown: categories
+    #   url: "/blog/"
     - caption: Services
       url: "/services/"
-    - caption: Work
-      url: "/work/" # note: redundant.. link found in blog dropdown also
+    # - caption: Work
+    #   url: "/work/" 
     - caption: Team
       url: "/team/"
   footer:
     expertise: # todo: make this like services.yml
-      - caption: Docker
+      - caption: Docker / Kubernetes
       - caption: Elixir / Phoenix
-      - caption: Ruby
-      - caption: ReactJS 
+      - caption: Ruby / Rails
+      - caption: React / JS
     menu:
-      - caption: Work
-        url: "/work/"
+      # - caption: Work
+      #   url: "/work/"
+      - caption: Team
+        url: "/team/"
       - caption: Services
         dropdown: services
         url: "/services/"
-      - caption: Blog
-        dropdown: categories
-        url: "/blog/"
+      # - caption: Blog
+      #   dropdown: categories
+      #   url: "/blog/"
 categories: # blog categories
   - name: work
     caption: Case Studies

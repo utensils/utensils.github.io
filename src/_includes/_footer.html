@@ -31,9 +31,9 @@
               {%- if linkage.dropdown == "services" -%}
                 {%- for catalog in site.data.services.catalog -%}
                 {%- capture active -%}
-                  {%- if page.service.name == catalog.name -%} is-active{%- endif -%}
+                  {%- if page.service.slug == catalog.slug -%} is-active{%- endif -%}
                 {%- endcapture -%}
-                <li><a{% if active %} class="{{ active }}"{% endif %} href="{{ catalog.slug | prepend: "/services/" }}">{{ catalog.name }}</a></li>
+                <li><a{% if active %} class="{{ active }}"{% endif %} href="{{ catalog.slug | prepend: "/services/" }}">{{ catalog.caption }}</a></li>
                 {%- endfor -%}
               {% endif %}
               {%- if linkage.dropdown == "categories" -%}

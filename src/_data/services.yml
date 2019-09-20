@@ -1,4 +1,5 @@
 industry: Solutions Boutique
+header: Doing the needful since 2014
 intro: |
   We’ve been around the block before and we’ve sat on the other side of the table.  We won’t waste your time or money with countless meetings and processes.  In fact, if it’s not work on a deliverable we *don’t charge*.   That means all of our work is peer reviewed by another team member *at no charge to our clients*.  Why?  Because we believe in delivering the right solution, the first time
 
@@ -6,46 +7,75 @@ area-served:
   type: Text # valid: Text, or Place (e.g. State, or City)
   caption: Worldwide
 catalog:
-  - name: Product Design # link caption
+  - caption: Product Design # link caption 
     slug: digital-product-design # link url
-    title: Digital Product Design # page title
-    description: Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+    header: Digital Product Design
+    title:  # page title (50-80 chars)
+    description: Excepteur sint occaecat cupidatat # meta description (< 180 chars)
     offers:
-      - name: Strategy & Planning # link caption and page title
-        slug: strategy-and-planning
-        description: Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
-      - name: Product Development
-        slug: product-development
-        description: Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
-      - name: User Experience
-        title: User Experience (UX) Design
-        slug: ux-design
-        description: Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
-  - name: Software Engineering
-    title: Software Engineering
-    slug: software-engineering
-    description: Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+      - caption: Strategy & Planning # link caption
+        slug: strategy-and-planning # link url
+        header: Strategy & Planning
+        title:  # page title (50-80 chars)
+        cta: Learn more
+        description: Excepteur sint occaecat cupidatat # meta description (< 180 chars)
+      - caption: Product Development # link caption
+        slug: product-development # link url
+        header: Product Development
+        title:  # page title (50-80 chars)
+        cta: Learn more
+        description: Excepteur sint occaecat cupidatat # meta description (< 180 chars)
+      - caption: User Experience # link caption
+        slug: ux-design # link url
+        header: User Experience (UX) Design
+        title:  # page title (50-80 chars)
+        cta: Learn more
+        description: Excepteur sint occaecat cupidatat # meta description (< 180 chars)
+  - caption: Software Engineering # link caption
+    slug: software-engineering-solutions # link url
+    header: Software Engineering 
+    title:  # page title (50-80 chars)
+    description: Excepteur sint occaecat cupidatat # meta description (< 180 chars)
     offers:
-      - name: Back-end development
-        slug: back-end-development
-        description: Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
-      - name: User-focused development
-        slug: user-focused-development
-        description: Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
-      - name: Testing and QA
-        slug: testing-and-qa
-        description: Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
-  - name: Operations
-    title: Operations
-    slug: operations
-    description: Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+      - caption: Back-end Development # link caption 
+        slug: back-end-development # link url 
+        header: Back-end Development
+        title:  # page title (50-80 chars)
+        cta: Learn more
+        description: Excepteur sint occaecat cupidatat # meta description (< 180 chars)
+      - caption: User-focused development # link caption
+        slug: user-focused-development # link url
+        header: Product Development
+        title:  # page title (50-80 chars)
+        cta: Learn more
+        description: Excepteur sint occaecat cupidatat # meta description (< 180 chars)
+      - caption: Testing and QA # link caption
+        slug: testing-and-qa # link url
+        header: Testing and QA
+        title:  # page title (50-80 chars)
+        cta: Learn more
+        description: Excepteur sint occaecat cupidatat # meta description (< 180 chars)
+  - caption: Operations # link caption
+    slug: operations # link url
+    header: Operations 
+    title:  # page title (50-80 chars)
+    description: Excepteur sint occaecat cupidatat # meta description (< 180 chars)
     offers:
-      - name: Docker
-        slug: docker
-        description: Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
-      - name: Kubernetes
-        slug: ubernetes
-        description: Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
-      - name: Hosting
-        slug: hosting
-        description: Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+      - caption: Docker # link caption
+        slug: docker-solutions # link url
+        header: Strategy & Planning
+        title:  # page title (50-80 chars)
+        cta: Learn more
+        description: Excepteur sint occaecat cupidatat # meta description (< 180 chars)
+      - caption: Kubernetes # link caption
+        slug: kubernetes-solutions # link url
+        header: Product Development
+        title:  # page title (50-80 chars)
+        cta: Learn more
+        description: Excepteur sint occaecat cupidatat # meta description (< 180 chars)
+      - caption: Continuous Integrations # link caption
+        slug: continuous-integrations-solutions # link url
+        header: Continuous Integrations
+        title:  # page title (50-80 chars)
+        cta: Learn more
+        description: Excepteur sint occaecat cupidatat # meta description (< 180 chars)

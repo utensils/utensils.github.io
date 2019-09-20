@@ -8,7 +8,8 @@ class UtensilsGenerator < Jekyll::Generator
       # build service page
       page = Jekyll::PageWithoutAFile.new(site, site.source, "services/", "#{sanitize(service['slug'])}.md")
       page.data['layout'] = 'service'
-      page.data['title'] = service['name']
+      page.data['title'] = service['title']
+      page.data['description'] = service['description']
       page.data['service'] = service
       site.pages << page
       
@@ -17,6 +18,7 @@ class UtensilsGenerator < Jekyll::Generator
         page = Jekyll::PageWithoutAFile.new(site, site.source, "services/#{sanitize(service['slug'])}/", "#{sanitize(offer['slug'])}.md")
         page.data['layout'] = 'offer'
         page.data['title'] = offer['name']
+        page.data['description'] = offer['description']
         page.data['service'] = service
         page.data['offer'] = offer
         

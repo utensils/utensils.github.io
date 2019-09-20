@@ -2,12 +2,37 @@
 layout: default
 title: Services
 ---
+
 <section class="section has-text-centered">
-  <div class="container ">
-    <div class="content">{{ site.data.services.intro | markdownify }}</div>
-    {% for catalog in site.data.services.catalog %}
-    <h2 class="title is-3 is-capitalized bree"><a href="{{ catalog.slug }}">{{ catalog.name }}</a></h2>
-    {{ catalog.description | markdownify }}
-    {% endfor %}
+  <div class="container">
+    <h1 class="title is-1 has-text-weight-bold">{{ site.data.services.header }}</h1>
+    <div class="column is-6 is-offset-3">
+      <div class="content">{{ site.data.services.intro | markdownify }}</div>
+    </div>
+    
   </div>
 </section>
+  
+{% for catalog in site.data.services.catalog %}
+<section class="section is-medium">
+  <div class="container">
+    <h2 class="title has-text-centered is-2 is-capitalized bree">{{ catalog.header }}</h2>
+    <div class="column is-6 is-offset-3">
+      <div class="content has-text-centered">
+        {{ catalog.description | markdownify }}  
+      </div>
+    </div>
+  </div>
+  {% for offer in catalog.offers %}
+  <div class="container">
+    <div class="column is-6 is-offset-3">
+      <h3 class="title is-3">{{ offer.header }}</h3>
+      <div class="content">
+        {{ offer.description | markdownify }}
+      </div>
+      <a href="{{ catalog.slug }}/{{ offer.slug }}">{{ offer.cta }}</a>      
+    </div>
+  </div>
+  {% endfor %}
+</section>
+{% endfor %}
