@@ -3,6 +3,11 @@ module.exports = {
   plugins: [
     require('@tailwindcss/typography'),
   ],
+  variants: {
+    extend: {
+     fontWeight: ['hover'],
+    }
+  },
   theme: {
     extend: {
       colors: {
