@@ -1,8 +1,9 @@
-export default function Avatar({ name, picture }) {
+export default function Avatar({ name, github }) {
   return (
     <div className="flex items-center">
-      <img src={picture} className="w-12 h-12 rounded-full mr-4" alt={name} />
-      <div className="text-xl font-bold">{name}</div>
+      <div className="text-2xl font-bold text-red-500 hover:text-red-600 pr-2">
+        <a href={github}>{name}</a>
+      </div>
     </div>
   )
 }

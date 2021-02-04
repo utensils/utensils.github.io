@@ -1,15 +1,16 @@
 ---
-title: 'The New New: Going Static with Next.js'
+title: 'Going Static with Next.js'
 excerpt: 'In this post we look at the decisions behind using Next.js and TailwindCSS for our new homepage.'
 date: '2020-02-02'
+slug: 'going-static-with-nextjs'
 authors:
   - name: Sean Callan
     github: https://github.com/doomspork
-  - name: John
+  - name: John Turknett
+    github: https://github.com/doomspork
 tags:
   - 'TailwindCSS'
   - 'NextJS'
-  - 'Static Site'
 ---
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Praesent elementum facilisis leo vel fringilla est ullamcorper eget. At imperdiet dui accumsan sit amet nulla facilities morbi tempus. Praesent elementum facilisis leo vel fringilla. Congue mauris rhoncus aenean vel. Egestas sed tempus urna et pharetra pharetra massa massa ultricies.
