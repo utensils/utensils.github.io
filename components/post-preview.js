@@ -5,9 +5,11 @@ export default function PostPreview({
 }) {
   return (
     <div className="p-6 flex flex-col items-start">
+      <div className="inline-flex">
       {tags.map((tag) => (
-        <span className="inline-block py-1 px-2 rounded bg-red-50 text-red-500 text-xs font-medium tracking-widest">{tag}</span>
+        <span className="py-1 px-2 mr-2 rounded bg-red-50 text-red-500 text-xs font-medium tracking-widest">{tag}</span>
       ))}
+      </div>
       <h2 className="sm:text-3xl text-2xl title-font font-medium text-gray-900 mt-4 mb-4">{title}</h2>
       <p className="leading-relaxed mb-4">{excerpt}</p>
       <div className="flex items-center flex-wrap pb-4 mb-4 border-b-2 border-gray-100 mt-auto w-full">
