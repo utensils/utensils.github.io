@@ -11,7 +11,7 @@ export default function ArticleHeader({ title, date, authors }) {
         </div>
         <div className="flex flex-inline pb-2 pt-4">
         {authors.map((author) => {
-          return <Avatar name={author.name} github={author.github} />
+          return <Avatar key={author.name} name={author.name} github={author.github} />
         })}
         </div>
       </div>

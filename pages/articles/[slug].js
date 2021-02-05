@@ -34,7 +34,7 @@ export default function Article({ article, preview }) {
                 date={article.date}
                 authors={article.authors}
               />
-              <ArticleBody content={article.content} />
+              <ArticleBody content={article.content} excerpt={article.excerpt} />
             </article>
           </>
         )}
@@ -45,11 +45,12 @@ export default function Article({ article, preview }) {
 
 export async function getStaticProps({ params }) {
   const article = getArticleBySlug(params.slug, [
-    'title',
-    'date',
-    'slug',
     'authors',
     'content',
+    'date',
+    'excerpt',
+    'slug',
+    'title',
   ])
   const content = await markdownToHtml(article.content || '')
 

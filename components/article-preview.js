@@ -10,14 +10,16 @@ export default function ArticlePreview({
   title,
 }) {
   return (
-    <div className="p-6 flex flex-col items-start">
-      <h2 className="sm:text-3xl text-2xl title-font font-medium text-gray-900 mt-4 mb-4">{title}</h2>
+    <div className="px-6 flex flex-col items-start">
+      <Link as={`/articles/${slug}`} href="/articles/[slug]">
+        <a className="sm:text-3xl text-2xl title-font font-medium text-gray-900 mt-4 mb-4">{title}</a>
+      </Link>
       <div className="inline-flex">
         <div className="text-lg font-bold text-gray-400 mr-6">
           <DateFormatter dateString={date} />
         </div>
         <div>
-        <Tags tags={tags} />
+        <Tags key={slug} tags={tags} />
         </div>
       </div>
       <p className="leading-relaxed mt-4 mb-4">{excerpt}</p>

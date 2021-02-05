@@ -4,7 +4,7 @@ import ArticlePreview from './article-preview'
 export default function ArticleList({ articles }) {
   return (
     <section>
-      <div className="flex flex-rows">
+      <div className="flex flex-col mt-6">
         {articles.map((article) => (
           <ArticlePreview
             key={article.slug}
