@@ -1,6 +1,6 @@
 name: Deploy
 
-on: 
+on:
   push:
     branches:
       - master
@@ -30,6 +30,9 @@ jobs:
       - run: yarn install
       - run: yarn build
       - run: yarn export
+
+      - name: Copy config
+        run: cp CNAME out/CNAME
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
