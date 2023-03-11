@@ -9,7 +9,7 @@ export default function Intro() {
           1. an implement, container, or other article, especially for household use.
         </span>
         <span className="text-2xl font-bold text-gray-600 pl-6">
-          2. a product or experienced individual that delivers results, especially for engineer and systems work.
+          2. a product or experienced individual that delivers results, especially for engineering and systems work.
         </span>
       </div>
     </div>
