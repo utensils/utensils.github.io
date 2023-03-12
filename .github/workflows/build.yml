@@ -19,9 +19,8 @@ jobs:
         with:
           node-version: "14.x"
 
-      - name: Build
+      - name: Install
         run: yarn install
+
+      - name: Build
         run: yarn build
-        run: yarn export
-
-
