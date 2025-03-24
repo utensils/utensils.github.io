@@ -1,15 +1,9 @@
-const { bg } = require('date-fns/locale');
-
+/** @type {import('tailwindcss').Config} */
 module.exports = {
-  purge: ['./components/**/*.js', './pages/**/*.js'],
+  content: ['./components/**/*.js', './pages/**/*.js'],
   plugins: [
     require('@tailwindcss/typography'),
   ],
-  variants: {
-    extend: {
-     fontWeight: ['hover'],
-    }
-  },
   theme: {
     extend: {
       spacing: {

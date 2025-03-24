@@ -5,7 +5,7 @@ import Layout from '../components/layout'
 import { getAllArticles } from '../lib/api'
 import Head from 'next/head'
 
-export default function Index({ allArticles }) {
+export default function Index({ allArticles = [] }) {
   return (
     <>
       <Layout>
@@ -13,8 +13,8 @@ export default function Index({ allArticles }) {
           <title>Utensils</title>
         </Head>
         <Container>
-        <Header subtitle="words and wisdom" />
-        <ArticleList articles={allArticles}/>
+          <Header subtitle="words and wisdom" />
+          <ArticleList articles={allArticles}/>
         </Container>
       </Layout>
     </>
@@ -22,16 +22,23 @@ export default function Index({ allArticles }) {
 }
 
 export async function getStaticProps() {
-  const allArticles = getAllArticles([
-    'title',
-    'date',
-    'slug',
-    'authors',
-    'excerpt',
-    'tags'
-  ])
+  try {
+    const allArticles = getAllArticles([
+      'title',
+      'date',
+      'slug',
+      'authors',
+      'excerpt',
+      'tags'
+    ]) || []
 
-  return {
-    props: { allArticles },
+    return {
+      props: { allArticles },
+    }
+  } catch (error) {
+    console.error('Error getting articles:', error)
+    return {
+      props: { allArticles: [] }
+    }
   }
 }
