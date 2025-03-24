@@ -123,7 +123,8 @@ dist
 .LSOverride
 
 # Icon must end with two \r
-Icon
+Icon
+
 
 # Thumbnails
 ._*
@@ -164,5 +165,8 @@ Sessionx.vim
 tags
 # Persistent undo
 [._]*.un~
+
+# Output of build
+out/
 
 # End of https://www.toptal.com/developers/gitignore/api/node,osx,vim
