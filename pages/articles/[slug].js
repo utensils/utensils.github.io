@@ -25,9 +25,7 @@ export default function Article({ article, preview }) {
           <>
             <article>
               <Head>
-                <title>
-                  {article.title} | Utensils.io 
-                </title>
+                <title>{`${article.title} | Utensils.io`}</title>
               </Head>
               <ArticleHeader
                 title={article.title}
