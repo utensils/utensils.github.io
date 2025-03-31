@@ -1,8 +1,10 @@
 ---
-title: "Copy-Pasta: The ADHD Engineer's Guide to Massive Context Windows"
-excerpt: "How I leveraged Gemini's massive context window to review entire codebases and save my ADHD brain from project chaos."
+title: "Forking Around: Copy-Pasta - The ADHD Engineer's Guide to Massive Context Windows"
+excerpt: "How I leverage Gemini's massive context window to review entire codebases and save my ADHD brain from project chaos."
 date: '2025-03-30'
-slug: 'copy-pasta-geminis-context-window-saved-my-dignity'
+slug: 'copy-pasta-the-adhd-engineers-guide-to-massive-context-windows'
+series: "Forking Around"
+seriesOrder: 1
 authors:
   - name: James Brink
     github: https://github.com/jamesbrink
@@ -14,7 +16,8 @@ tags:
   - 'Agentic'
 ---
 
-# Copy-Pasta: The ADHD Engineer's Guide to Massive Context Windows
+# Forking Around: Copy-Pasta
+## The ADHD Engineer's Guide to Massive Context Windows
 
 _By James Brink, "SRE" and Tinkerer of Terror_
 
