@@ -75,6 +75,16 @@ tags:
 Article content goes here...
 ```
 
+### Adding Images to Articles
+
+Images for articles should be placed in the `/public/images/articles/[article-slug]/` directory. For example, images for an article with the slug `my-new-article` would go in `/public/images/articles/my-new-article/`.
+
+Reference images in your Markdown using standard syntax:
+
+```markdown
+![Image description](/images/articles/my-new-article/image-name.jpg)
+```
+
 ## Deployment
 
 The site is automatically deployed to GitHub Pages when changes are pushed to the main branch. The deployment process is handled by a GitHub Actions workflow defined in `.github/workflows/deploy.yml`.
