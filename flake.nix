@@ -27,6 +27,9 @@
             packages = with pkgs; [
               nodejs_22
               yarn
+              nodePackages_latest.localtunnel
+              nodePackages.eslint
+              nodePackages.prettier
             ];
 
             # No environment variables needed
@@ -53,6 +56,58 @@
                 name = "install-deps";
                 help = "Install dependencies";
                 command = "yarn install --frozen-lockfile";
+              }
+              {
+                name = "lint";
+                help = "Run ESLint to check code quality";
+                command = "yarn lint";
+              }
+              {
+                name = "lint-fix";
+                help = "Run ESLint with auto-fix to fix code style issues";
+                command = "yarn lint:fix";
+              }
+              {
+                name = "preview-test";
+                help = "Start dev server and create localtunnel for testing link previews, or sharing";
+                command = ''#!/usr/bin/env bash
+                  # Create a cleanup function to kill all child processes
+                  function cleanup() {
+                    echo "\nCleaning up processes..."
+                    # Kill all child processes in this process group
+                    pkill -P $$
+                    exit 0
+                  }
+                  
+                  # Set trap to call cleanup on exit signals
+                  trap cleanup SIGINT SIGTERM EXIT
+                  
+                  # Start dev server and capture its PID
+                  echo "Starting dev server..."
+                  yarn dev &
+                  DEV_PID=$!
+                  
+                  # Wait for server to start
+                  echo "Waiting for dev server to start..."
+                  sleep 5
+                  
+                  # Check which port the server is using
+                  PORT=3000
+                  if ! lsof -i :3000 | grep -q "LISTEN"; then
+                    if lsof -i :3001 | grep -q "LISTEN"; then
+                      PORT=3001
+                    elif lsof -i :3002 | grep -q "LISTEN"; then
+                      PORT=3002
+                    fi
+                  fi
+                  
+                  echo "\n\n🔗 Use one of these tools to test your link previews:\n  - Facebook: https://developers.facebook.com/tools/debug/\n  - Twitter: https://cards-dev.twitter.com/validator\n  - General: https://metatags.io/\n"
+                  echo "\n💻 Server running on port $PORT\n"
+                  
+                  # Start localtunnel in foreground with a custom subdomain
+                  # You can customize the subdomain to make it more memorable
+                  lt --port $PORT --subdomain utensils-preview
+                '';
               }
             ];
 
