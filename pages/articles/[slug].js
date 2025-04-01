@@ -28,7 +28,7 @@ export default function Article({ article, preview }) {
     '/logo.png';
     
   // Get the host for absolute URLs
-  const host = process.env.NODE_ENV === 'production' ? 'https://utensils.io' : '';
+  const host = process.env.NODE_ENV === 'production' ? 'https://utensils.io' : 'http://localhost:3000';
   const absoluteImagePath = `${host}${imagePath}`;
   
   return (
