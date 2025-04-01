@@ -129,4 +129,8 @@ We all know how insanely long AWS CLI commands can be... this is another area wh
 
 When doing this kind of stuff, I've found Windsurf is pretty solid, but I have also enjoyed Goose. This fucker can be both insanely useful and dangerous... you have been warned lol.
 
-In the next installment of "Forking Around," I'll probably ramble about some other chaotic approach to infrastructure that keeps my ADHD brain engaged long enough to actually finish a project. But let's be real, there's only a 50% chance I'll write that post.
+The real power of these tools isn't just in the code they generate, but in how they can help us make sense of complex systems. For someone with my flavor of ADHD, having an AI that can quickly parse through logs, configs, and error messages is like finally having the missing manual for my brain.
+
+---
+
+*If you're experimenting with AI for infrastructure work, start with something low-risk. Don't be like me and immediately give an AI agent root access to production systems. And when you inevitably ignore this advice, remember: good backups are your friend.*
