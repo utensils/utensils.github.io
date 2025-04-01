@@ -101,7 +101,6 @@
                     fi
                   fi
                   
-                  echo "\n\n🔗 Use one of these tools to test your link previews:\n  - Facebook: https://developers.facebook.com/tools/debug/\n  - Twitter: https://cards-dev.twitter.com/validator\n  - General: https://metatags.io/\n"
                   echo "\n💻 Server running on port $PORT\n"
                   
                   # Start localtunnel in foreground with a custom subdomain
