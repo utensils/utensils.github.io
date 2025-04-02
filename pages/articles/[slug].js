@@ -28,7 +28,10 @@ export default function Article({ article, preview }) {
     '/logo.png';
     
   // Get the host for absolute URLs
-  const host = process.env.NODE_ENV === 'production' ? 'https://utensils.io' : 'http://localhost:3000';
+  const host = 'https://utensils.io';
+  
+  // For social sharing, we need absolute URLs to images
+  // This ensures images work both locally and in production
   const absoluteImagePath = `${host}${imagePath}`;
   
   return (

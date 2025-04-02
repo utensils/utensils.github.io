@@ -16,3 +16,19 @@
 .markdown h3 {
   @apply text-2xl mt-8 mb-4 leading-snug;
 }
+
+.markdown table {
+  @apply w-full border-collapse my-8;
+}
+
+.markdown table th {
+  @apply px-4 py-2 border border-gray-300 bg-gray-100 font-bold text-left;
+}
+
+.markdown table td {
+  @apply px-4 py-2 border border-gray-300;
+}
+
+.markdown table tr:nth-child(even) {
+  @apply bg-gray-50;
+}
