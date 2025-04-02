@@ -1,5 +1,5 @@
 .markdown {
-  @apply text-lg leading-relaxed;
+  @apply text-base sm:text-lg leading-relaxed;
 }
 
 .markdown p,
@@ -18,17 +18,50 @@
 }
 
 .markdown table {
-  @apply w-full border-collapse my-8;
+  @apply w-full border-collapse my-6 table-auto max-w-full;
+}
+
+.markdown div.table-wrapper {
+  @apply overflow-x-auto w-full block my-6;
 }
 
 .markdown table th {
-  @apply px-4 py-2 border border-gray-300 bg-gray-100 font-bold text-left;
+  @apply px-1 py-1 border border-gray-300 bg-gray-100 font-bold text-left text-sm sm:text-base;
 }
 
 .markdown table td {
-  @apply px-4 py-2 border border-gray-300;
+  @apply px-1 py-1 border border-gray-300 text-sm sm:text-base break-words;
 }
 
 .markdown table tr:nth-child(even) {
   @apply bg-gray-50;
+}
+
+/* Code blocks styling */
+.markdown pre {
+  @apply overflow-x-auto my-6 rounded-md bg-gray-800 p-4 text-white;
+}
+
+.markdown code {
+  @apply font-mono text-sm sm:text-base;
+}
+
+.markdown p code {
+  @apply bg-gray-100 px-1 py-0.5 rounded text-sm sm:text-base;
+}
+
+/* For very small screens, adjust the display */
+@media (max-width: 480px) {
+  .markdown table {
+    @apply table-fixed;
+  }
+  
+  .markdown table th,
+  .markdown table td {
+    @apply px-1 py-1;
+  }
+  
+  .markdown pre {
+    @apply p-2 text-sm;
+  }
 }
