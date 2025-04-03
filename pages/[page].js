@@ -8,6 +8,7 @@ import Layout from '../components/layout'
 import { getPageBySlug, getAllPages } from '../lib/api'
 import Head from 'next/head'
 import markdownToHtml from '../lib/markdownToHtml'
+import Meta from '../components/meta'
 
 export default function Page({ page, preview }) {
   const router = useRouter()
@@ -34,6 +35,53 @@ export default function Page({ page, preview }) {
   
   const absoluteImagePath = `${host}${page.ogImage || '/logo.png'}`
   
+  // Check if this is the MCP-NixOS page to use custom favicon
+  const isMcpNixosPage = page.slug === 'mcp-nixos'
+  
+  // For the MCP-NixOS page, we'll render without the default Layout
+  // to avoid loading the default Meta component with its favicon links
+  if (isMcpNixosPage) {
+    return (
+      <div className="min-h-screen">
+        <Head>
+          <title>{`${page.title} | Utensils`}</title>
+          <meta property="og:title" content={`${page.title} | Utensils.io`} />
+          <meta property="og:description" content={page.description || page.excerpt || 'Utensils.io'} />
+          <meta property="og:image" content={absoluteImagePath} />
+          <meta property="og:url" content={`${host}/${page.slug}`} />
+          <meta property="og:type" content="article" />
+          <meta property="og:site_name" content="Utensils.io" />
+          
+          <meta name="twitter:card" content="summary_large_image" />
+          <meta name="twitter:title" content={`${page.title} | Utensils.io`} />
+          <meta name="twitter:description" content={page.description || page.excerpt || 'Utensils.io'} />
+          <meta name="twitter:image" content={absoluteImagePath} />
+          
+          {/* Custom favicon links for MCP-NixOS page */}
+          <link rel="apple-touch-icon" sizes="180x180" href="/images/pages/mcp-nixos/favicon/apple-touch-icon.png" />
+          <link rel="apple-touch-icon-precomposed" href="/images/pages/mcp-nixos/favicon/apple-touch-icon-precomposed.png" />
+          <link rel="icon" type="image/png" sizes="32x32" href="/images/pages/mcp-nixos/favicon/favicon-32x32.png" />
+          <link rel="icon" type="image/png" sizes="16x16" href="/images/pages/mcp-nixos/favicon/favicon-16x16.png" />
+          <link rel="shortcut icon" href="/images/pages/mcp-nixos/favicon/favicon.ico" />
+          <meta name="msapplication-TileColor" content="#000000" />
+          <meta name="theme-color" content="#000" />
+          <link rel="alternate" type="application/rss+xml" href="/feed.xml" />
+          <meta name="description" content={page.description || page.excerpt || 'MCP-NixOS - Because Your AI Assistant Shouldn\'t Hallucinate About Packages'} />
+        </Head>
+        <main>
+          <Container>
+            <Header subtitle={page.title} />
+            <article>
+              <PageHeader excerpt={page.excerpt} />
+              <PageBody content={page.content} />
+            </article>
+          </Container>
+        </main>
+      </div>
+    )
+  }
+  
+  // For all other pages, use the normal Layout with Meta component
   return (
     <Layout preview={preview}>
       <Container>
