@@ -80,7 +80,7 @@ Strengths of this format:
 
 ## Atomic Commits
 
-Each commit should represent one logical change: fix a bug, add a feature, update documentation, etc. Each of our commits should be a units of work that can stand on their own.
+Each commit should represent one logical change: fix a bug, add a feature, update documentation, etc. Each of our commits should be a single unit of work that can stand on its own.
 
 **Benefits of atomic commits:**
 - **Simpler debugging** - When tracking down issues with `git bisect`
