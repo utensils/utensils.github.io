@@ -1,7 +1,7 @@
 ---
 title: 'Staying Clean with Git Hygiene'
 excerpt: 'Practical tips for better version control that your teammates will thank you for'
-date: '2025-04-04'
+date: '2025-04-11'
 slug: 'staying-clean-with-git-hygiene'
 authors:
   - name: Sean Callan
