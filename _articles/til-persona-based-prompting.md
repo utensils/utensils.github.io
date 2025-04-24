@@ -1,6 +1,6 @@
 ---
 title: 'TIL: Persona-based Prompting'
-excerpt: "Stop asking AI for generic responses and start telling it *who* to be. Let's explore how persona-based prompting gives your AI interactions personality and character."
+excerpt: "Stop asking AI for generic responses and start giving it persona-lity! Today we explore how persona-based prompting gives your AI interactions personality and character."
 date: '2025-04-22'
 slug: 'til-persona-based-prompting'
 authors:
