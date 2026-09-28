@@ -1,0 +1,19 @@
+{
+  "applinks": {
+    "details": [
+      {
+        "appIDs": ["28X9H69QGE.io.utensils.mold.companion"],
+        "components": [
+          {
+            "/": "/mold/pair",
+            "comment": "Mold Studio Companion pairing codes; the code rides in the fragment"
+          },
+          {
+            "/": "/mold/pair/",
+            "comment": "The same, with a trailing slash"
+          }
+        ]
+      }
+    ]
+  }
+}
