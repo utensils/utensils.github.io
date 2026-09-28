@@ -38,6 +38,9 @@ jobs:
         with:
           name: github-pages
           path: ./out
+          # upload-artifact v4.4+ drops dot-directories by default, which
+          # left out .well-known/apple-app-site-association.
+          include-hidden-files: true
 
   deploy:
     needs: build
