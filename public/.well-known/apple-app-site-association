@@ -2,11 +2,14 @@
   "applinks": {
     "details": [
       {
-        "appIDs": ["28X9H69QGE.io.utensils.mold.companion"],
+        "appIDs": [
+          "28X9H69QGE.io.utensils.mold.companion",
+          "28X9H69QGE.com.utensils.mold"
+        ],
         "components": [
           {
             "/": "/mold/pair",
-            "comment": "Mold Studio Companion pairing codes; the code rides in the fragment"
+            "comment": "Mold native and Tauri secure pairing; private invitation stays in the fragment"
           },
           {
             "/": "/mold/pair/",

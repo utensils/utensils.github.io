@@ -167,3 +167,13 @@ yarn lint:fix
 - [Remark](https://github.com/remarkjs/remark) - Markdown processor
 - [ESLint](https://eslint.org/) - JavaScript linter
 - [Prettier](https://prettier.io/) - Code formatter
+
+## Mold app links
+
+`public/.well-known/apple-app-site-association` authorizes the native Companion
+and Tauri iOS bundle IDs for `/mold/pair`. `assetlinks.json` authorizes Android
+package `com.utensils.mold` using the release signing certificate (SHA-256
+extracted from the published Mold v0.34.0 APK signing block and checked with
+OpenSSL). Update the association when the release signing key rotates; do not
+include development certificates. Pairing secrets remain in URL fragments.
+The deployment artifact must include hidden files to publish these records.
