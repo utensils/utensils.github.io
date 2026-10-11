@@ -1,0 +1,14 @@
+[
+  {
+    "relation": [
+      "delegate_permission/common.handle_all_urls"
+    ],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.utensils.mold",
+      "sha256_cert_fingerprints": [
+        "B9:50:01:B1:70:A0:1E:12:01:3A:DD:E9:65:E8:3D:A5:1C:1F:54:D3:71:A2:32:B9:DA:49:44:50:E1:CA:BE:2E"
+      ]
+    }
+  }
+]
